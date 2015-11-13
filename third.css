@@ -33,8 +33,16 @@
 	font-weight: bold;
 }*/
 
+.learn-more {
+    padding-top: 10px;
+}
+
 .learn-more a {
     color: #00b0ff;
+}
+
+.learn-more h3 {
+    font-size: 20px;
 }
 
 .formularz p {
@@ -44,20 +52,20 @@
 
 .formularz h3 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
+.formularz table {
+    margin-left: auto;
+    margin-right: auto;
+}
+/*
 .formularz label {
-    margin-left: 30px;
+    margin-left: 15px;
 }
-
+*/
 .tabelka h3 {
     text-align: center;
-}
-
-table, td, th {
-    border: none;
-    /*text-align: center;
-    margin: auto; */
 }
 
 td {
@@ -86,5 +94,10 @@ input {
 }
 
 .btn-block {
-    margin-left: 10px;
+    width: 50%;
+    height: 35px;
+    margin-left: 25%;
+    margin-right: 25%;
+    position: relative;
+    top: 12px;
 }
