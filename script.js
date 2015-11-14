@@ -41,6 +41,14 @@ function checkPeselValidity(p) {
     }
 }
 
+function disableSendButton() {
+    $('.btn-block').prop("disabled", true);
+}
+
+function enableSendButton() {
+    $('.btn-block').prop("disabled", false);
+}
+
 function main() {
 
 	/*
@@ -116,7 +124,7 @@ function main() {
     $('#passwd2').keyup(matchPasswords);
     $('#passwd2').click(matchPasswords);
 
-    $('#bday').blur( function() {
+    $('#bday').focusout( function() {
 
         var lowLimitDate = new Date('01/01/1900');
         var highLimitDate = new Date();
@@ -125,9 +133,11 @@ function main() {
 
         if( birthday > lowLimitDate && birthday < highLimitDate ) {
             $(this).addClass('good-input');
+            enableSendButton();
         } else {
             $(this).removeClass('good-input');
             $(this).addClass('bad-input');
+            disableSendButton();
         }
 
     });
@@ -152,9 +162,11 @@ function main() {
 
                     if( exists === false) {
                         $('#login').addClass('good-input');
+                        enableSendButton();
                     } else {
                         $('#login').removeClass('good-input');
                         $('#login').addClass('bad-input');
+                        disableSendButton();
                     }
                 }
             });
@@ -173,11 +185,13 @@ function main() {
 		if( pesel.length === 11 ) {
             if( checkPeselValidity(pesel) === true) {
                 $(this).addClass('good-input');
+                enableSendButton();
                 selectSex(pesel);
             }
 		} else {
             $(this).removeClass('good-input');
             $(this).addClass('bad-input');
+            disableSendButton();
         }
 
 	});

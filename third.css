@@ -101,3 +101,7 @@ input {
     position: relative;
     top: 12px;
 }
+
+.btn-block[disabled] {
+    color: gray;
+}
