@@ -116,6 +116,22 @@ function main() {
     $('#passwd2').keyup(matchPasswords);
     $('#passwd2').click(matchPasswords);
 
+    $('#bday').blur( function() {
+
+        var lowLimitDate = new Date('01/01/1900');
+        var highLimitDate = new Date();
+
+        var birthday = new Date( $(this).val() );
+
+        if( birthday > lowLimitDate && birthday < highLimitDate ) {
+            $(this).addClass('good-input');
+        } else {
+            $(this).removeClass('good-input');
+            $(this).addClass('bad-input');
+        }
+
+    });
+
 
 	$('#login').keyup( function() {
 
