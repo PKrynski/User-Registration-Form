@@ -93,7 +93,7 @@ input {
     width: 45px;
 }
 
-.btn-block {
+.btn {
     width: 50%;
     height: 35px;
     margin-left: 25%;
@@ -101,7 +101,8 @@ input {
     position: relative;
     top: 12px;
 }
-
-.btn-block[disabled] {
+/*
+.btn[disabled] {
     color: gray;
 }
+*/

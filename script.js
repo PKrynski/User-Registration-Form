@@ -42,21 +42,16 @@ function checkPeselValidity(p) {
 }
 
 function disableSendButton() {
-    $('.btn-block').prop("disabled", true);
+    $('.btn').prop("disabled", true);
 }
 
 function enableSendButton() {
-    $('.btn-block').prop("disabled", false);
+    $('.btn').prop("disabled", false);
 }
 
 function main() {
 
-	/*
-	$('.btn-block').click(function() {
-		alert("Formularz został wysłany! Dziękujemy!");
-	});
-
-	--> Dla imienia i nazwiska w jednym polu:
+	/* Dla imienia i nazwiska w jednym polu:
 
 	$('#imi_naz').keyup( function() {
 
