@@ -51,7 +51,7 @@ function enableSendButton() {
 
 function main() {
 
-    $('.passhint').hide();
+    $('.hint').hide();
 
 	/* Dla imienia i nazwiska w jednym polu:
 
@@ -94,18 +94,18 @@ function main() {
             if( strongpassword === true ) {
                 $(this).removeClass('weak-input');
                 $(this).addClass('good-input');
-                $('.passhint').hide("slow");
+                $('#passhint').hide("slow");
             } else {
                 $(this).removeClass('good-input');
                 $(this).addClass('weak-input');
-                $('.passhint').show("slow");
+                $('#passhint').show("slow");
                 disableSendButton();
             }
 		} else {
 			$(this).removeClass('good-input');
             $(this).removeClass('weak-input');
 			$(this).addClass('bad-input');
-            $('.passhint').show("slow");
+            $('#passhint').show("slow");
             disableSendButton();
 		}
 
@@ -172,10 +172,12 @@ function main() {
 
                     if( exists === false) {
                         $('#login').addClass('good-input');
+                        $('#loginhint').hide("slow");
                         enableSendButton();
                     } else {
                         $('#login').removeClass('good-input');
                         $('#login').addClass('bad-input');
+                        $('#loginhint').show("slow");
                         disableSendButton();
                     }
                 }

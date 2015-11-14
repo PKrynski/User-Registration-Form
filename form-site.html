@@ -56,7 +56,7 @@
                     <td><label for="passwd1">Hasło:</label></td>
                     <td><input type="password" id="passwd1" name="password" required></td>
                   </tr>
-                  <tr class="passhint">
+                  <tr class="hint" id="passhint">
                     <td>
                       <p>Hasło musi zawierać co najmniej 8 znaków, w tym przynajmniej jedną liczbę.</p>
                     </td>
@@ -74,6 +74,11 @@
                   <tr>
                     <td><label for="login">Login:</label></td>
                     <td><input type="text" id="login" name="login" required></td>
+                  </tr>
+                  <tr class="hint" id="loginhint">
+                    <td>
+                      <p>Podany login jest już zajęty.</p>
+                    </td>
                   </tr>
                   <tr>
                     <td><label for="pesel">PESEL:</label></td>
