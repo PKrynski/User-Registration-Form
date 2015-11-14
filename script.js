@@ -51,6 +51,8 @@ function enableSendButton() {
 
 function main() {
 
+    $('.passhint').hide();
+
 	/* Dla imienia i nazwiska w jednym polu:
 
 	$('#imi_naz').keyup( function() {
@@ -78,7 +80,9 @@ function main() {
 
         isPresent(this, lastname);
     });
-	
+
+    var strongpassword;
+
 	$('#passwd1').keyup( function() {
 
 		var password1 = $(this).val();
@@ -86,18 +90,23 @@ function main() {
         if( password1.length > 7 ) {
             $(this).addClass('weak-input');
 
-            var strongpassword = /[a-zA-Z]/.test(password1) && /\d/.test(password1);
+            strongpassword = /[a-zA-Z]/.test(password1) && /\d/.test(password1);
             if( strongpassword === true ) {
                 $(this).removeClass('weak-input');
                 $(this).addClass('good-input');
+                $('.passhint').hide("slow");
             } else {
                 $(this).removeClass('good-input');
                 $(this).addClass('weak-input');
+                $('.passhint').show("slow");
+                disableSendButton();
             }
 		} else {
 			$(this).removeClass('good-input');
             $(this).removeClass('weak-input');
 			$(this).addClass('bad-input');
+            $('.passhint').show("slow");
+            disableSendButton();
 		}
 
 	});
@@ -108,10 +117,16 @@ function main() {
 		var password2 = $(this).val();
 
 		if( password1 === password2 && password2.length > 7 ) {
-			$(this).addClass('good-input');
+            if( strongpassword === true) {
+                $(this).addClass('good-input');
+                enableSendButton();
+            } else {
+                $(this).addClass('weak-input');
+            }
 		} else {
 			$(this).removeClass('good-input');
 			$(this).addClass('bad-input');
+            disableSendButton();
 		}
 
 	};

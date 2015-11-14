@@ -73,6 +73,12 @@ td {
     height: 40px;
 }
 
+.passhint p {
+    font-size: 12px;
+    position: relative;
+    left: 220px;
+}
+
 .bad-input {
     box-shadow: 0 0 5px 2px rgba(255, 0, 0, 1);
 }
