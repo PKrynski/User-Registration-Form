@@ -53,21 +53,21 @@ function main() {
 
     $('.hint').hide();
 
-	/* Dla imienia i nazwiska w jednym polu:
+    /* Dla imienia i nazwiska w jednym polu:
 
-	$('#imi_naz').keyup( function() {
+    $('#imi_naz').keyup( function() {
 
-		var imieinazwisko = $(this).val();
+        var imieinazwisko = $(this).val();
 
-		if( imieinazwisko.length > 1 && hasWhiteSpace(imieinazwisko) ) {
-			$(this).addClass('good-input');
-		} else {
-			$(this).removeClass('good-input');
-			$(this).addClass('bad-input');
-		}
+        if( imieinazwisko.length > 1 && hasWhiteSpace(imieinazwisko) ) {
+            $(this).addClass('good-input');
+        } else {
+            $(this).removeClass('good-input');
+            $(this).addClass('bad-input');
+        }
 
-	});
-	*/
+    });
+    */
 
     $('#fname').keyup( function() {
         var firstname = $(this).val();
@@ -206,12 +206,14 @@ function main() {
 		if( pesel.length === 11 ) {
             if( checkPeselValidity(pesel) === true) {
                 $(this).addClass('good-input');
+                $('#peselhint').animate({height: 'hide', opacity: 'hide'}, "slow");
                 enableSendButton();
                 selectSex(pesel);
             }
 		} else {
             $(this).removeClass('good-input');
             $(this).addClass('bad-input');
+            $('#peselhint').animate({height: 'show', opacity: 'show'}, "slow");
             disableSendButton();
         }
 
