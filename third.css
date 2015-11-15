@@ -54,29 +54,35 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
-.formularz table {
-    margin-left: auto;
-    margin-right: auto;
-}
 /*
 .formularz label {
     margin-left: 15px;
 }
 */
-.tabelka h3 {
-    text-align: center;
+.formFields ul {
+    width: 444px;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0;
 }
 
-td {
+.formFields li {
+    display: inline-block;
     width: 220px;
     height: 40px;
 }
 
+.formFields li * {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .hint p {
+    width: 220px;
     font-size: 12px;
     position: relative;
-    left: 220px;
+    left: 290px;
 }
 
 .bad-input {
@@ -92,7 +98,7 @@ td {
 }
 
 input {
-    width: 220px;
+    width: inherit;
 }
 
 .radiobutton input {

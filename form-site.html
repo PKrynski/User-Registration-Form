@@ -43,61 +43,69 @@
 
               <form action="http://edi.iem.pw.edu.pl/bach/register/user/" method="POST" enctype="multipart/form-data" id="register-form">
 
-                <table>
-                  <tr>
-                    <td><label for="fname">Imię:</label></td>
-                    <td><input type="text" id="fname" name="firstname" required></td>
-                  </tr>
-                  <tr>
-                    <td><label for="lname">Nazwisko:</label></td>
-                    <td><input type="text" id="lname" name="lastname" required></td>
-                  </tr>
-                  <tr>
-                    <td><label for="passwd1">Hasło:</label></td>
-                    <td><input type="password" id="passwd1" name="password" required></td>
-                  </tr>
-                  <tr class="hint" id="passhint">
-                    <td>
-                      <p>Hasło musi zawierać co najmniej 8 znaków, w tym przynajmniej jedną liczbę.</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label for="passwd2">Powtórz hasło:</label></td>
-                    <td><input type="password" id="passwd2" name="password" required></td>
-                  </tr>
-                  <tr>
-                    <td><label for="bday">Data Urodzenia:</label></td>
-                    <td>
+                <div class="formFields">
+
+                  <ul>
+                    <li><label for="fname">Imię:</label></li>
+                    <li><input type="text" id="fname" name="firstname" required></li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="lname">Nazwisko:</label></li>
+                    <li><input type="text" id="lname" name="lastname" required></li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="passwd1">Hasło:</label></li>
+                    <li><input type="password" id="passwd1" name="password" required></li>
+                  </ul>
+
+                  <div class="hint" id="passhint">
+                    <p>Hasło musi zawierać co najmniej 8 znaków, w tym przynajmniej jedną liczbę.</p>
+                  </div>
+
+                  <ul>
+                    <li><label for="passwd2">Powtórz hasło:</label></li>
+                    <li><input type="password" id="passwd2" name="password" required></li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="bday">Data Urodzenia:</label></li>
+                    <li>
                       <input type="date" id="bday" name="birthdate" min="1900-01-01" placeholder="rrrr-mm-dd" required>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label for="login">Login:</label></td>
-                    <td><input type="text" id="login" name="login" required></td>
-                  </tr>
-                  <tr class="hint" id="loginhint">
-                    <td>
-                      <p>Podany login jest już zajęty.</p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label for="pesel">PESEL:</label></td>
-                    <td><input type="number" id="pesel" name="pesel" min="10000000000" max="99999999999" required></td>
-                  </tr>
-                  <tr>
-                    <td><label for="sexmale">Płeć:</label></td>
-                    <td>
+                    </li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="login">Login:</label></li>
+                    <li><input type="text" id="login" name="login" required></li>
+                  </ul>
+
+                  <div class="hint" id="loginhint">
+                    <p>Podany login jest już zajęty.</p>
+                  </div>
+
+                  <ul>
+                    <li><label for="pesel">PESEL:</label></li>
+                    <li><input type="number" id="pesel" name="pesel" min="10000000000" max="99999999999" required></li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="sexmale">Płeć:</label></li>
+                    <li>
                       <fieldset class="radiobutton">
                         <input type="radio" id="sexmale" name="sex" value="male" required>Mężczyzna
                         <input type="radio" id="sexfemale" name="sex" value="female" required>Kobieta
                       </fieldset>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td><label for="photo">Zdjęcie:</label></td>
-                    <td><input type="file" id="photo" name="photo" accept="image/*" required></td>
-                  </tr>
-                </table>
+                    </li>
+                  </ul>
+
+                  <ul>
+                    <li><label for="photo">Zdjęcie:</label></li>
+                    <li><input type="file" id="photo" name="photo" accept="image/*" required></li>
+                  </ul>
+
+                </div>
 
               </form>
 
