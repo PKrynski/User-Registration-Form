@@ -70,7 +70,6 @@
 .formFields li {
     display: inline-block;
     width: 220px;
-    height: 40px;
 }
 
 .formFields li * {
@@ -81,8 +80,8 @@
 .hint p {
     width: 220px;
     font-size: 12px;
-    position: relative;
-    left: 290px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .bad-input {
@@ -110,8 +109,7 @@ input {
     height: 35px;
     margin-left: 25%;
     margin-right: 25%;
-    position: relative;
-    top: 12px;
+    margin-top: 15px;
 }
 /*
 .btn[disabled] {

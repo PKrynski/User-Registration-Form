@@ -94,18 +94,18 @@ function main() {
             if( strongpassword === true ) {
                 $(this).removeClass('weak-input');
                 $(this).addClass('good-input');
-                $('#passhint').hide("slow");
+                $('#passhint').animate({height: 'hide', opacity: 'hide'}, "slow");
             } else {
                 $(this).removeClass('good-input');
                 $(this).addClass('weak-input');
-                $('#passhint').show("slow");
+                $('#passhint').animate({height: 'show', opacity: 'show'}, "slow");
                 disableSendButton();
             }
 		} else {
 			$(this).removeClass('good-input');
             $(this).removeClass('weak-input');
 			$(this).addClass('bad-input');
-            $('#passhint').show("slow");
+            $('#passhint').animate({height: 'show', opacity: 'show'}, "slow");
             disableSendButton();
 		}
 
@@ -178,12 +178,12 @@ function main() {
 
                         if( exists === false) {
                             $('#login').addClass('good-input');
-                            $('#loginhint').hide("slow");
+                            $('#loginhint').animate({height: 'hide', opacity: 'hide'}, "slow");
                             enableSendButton();
                         } else {
                             $('#login').removeClass('good-input');
                             $('#login').addClass('bad-input');
-                            $('#loginhint').show("slow");
+                            $('#loginhint').animate({height: 'show', opacity: 'show'}, "slow");
                             disableSendButton();
                         }
                     }
