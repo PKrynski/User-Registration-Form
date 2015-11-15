@@ -152,41 +152,50 @@ function main() {
 
     });
 
+    var checkAvailability;
 
 	$('#login').keyup( function() {
 
-		var login = $(this).val();
+        var that = this;
 
-        if( login.length >= 1) {
-            var check = "http://edi.iem.pw.edu.pl/bach/register/check/";
-            var url = check + login;
+        clearTimeout(checkAvailability);
+        checkAvailability = setTimeout( function() {
 
-            //console.info(url);
+            var login = $(that).val();
 
-            $.ajax( url, {
-                success: function(responseText, statusText, jqXHR) {
-                    //console.info(responseText);
-                    var myresponse = JSON.parse(responseText);
-                    var exists = myresponse[login];
-                    //console.info(exists);
+            if( login.length >= 1) {
+                var check = "http://edi.iem.pw.edu.pl/bach/register/check/";
+                var url = check + login;
 
-                    if( exists === false) {
-                        $('#login').addClass('good-input');
-                        $('#loginhint').hide("slow");
-                        enableSendButton();
-                    } else {
-                        $('#login').removeClass('good-input');
-                        $('#login').addClass('bad-input');
-                        $('#loginhint').show("slow");
-                        disableSendButton();
+                //console.info(url);
+
+                $.ajax( url, {
+                    success: function(responseText, statusText, jqXHR) {
+                        //console.info(responseText);
+                        var myresponse = JSON.parse(responseText);
+                        var exists = myresponse[login];
+                        //console.info(exists);
+
+                        if( exists === false) {
+                            $('#login').addClass('good-input');
+                            $('#loginhint').hide("slow");
+                            enableSendButton();
+                        } else {
+                            $('#login').removeClass('good-input');
+                            $('#login').addClass('bad-input');
+                            $('#loginhint').show("slow");
+                            disableSendButton();
+                        }
                     }
-                }
-            });
+                });
 
-        } else {
-            $('#login').removeClass('good-input');
-            $('#login').addClass('bad-input');
-        }
+            } else {
+                $('#login').removeClass('good-input');
+                $('#login').addClass('bad-input');
+            }
+
+        }, 1000);
+
 
 	});
 
