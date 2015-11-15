@@ -17,20 +17,31 @@ function isPresent(selector, string) {
 }
 
 function selectSex(pesel) {
-    console.info(pesel[9]);
+    //console.info(pesel[9]);
 
     if( pesel[9] % 2 === 0 ) {
-        console.info("pesel -> female");
+        //console.info("pesel -> female");
         $('#sexfemale').prop('checked', true);
     } else {
-        console.info("pesel -> male");
+        //console.info("pesel -> male");
         $('#sexmale').prop('checked', true);
     }
 }
 
 function checkPeselValidity(p) {
 
-    var controlsum = p[0] + 3*p[1] + 7*p[2] + 9*p[3] + p[4] + 3*p[5] + 7*p[6] + 9*p[7] + p[8] + 3*p[9] + p[10];
+    if( p < 210000000 ) {
+        return false;
+    }
+
+    var weights = [ 1, 3, 7, 9, 1, 3, 7, 9, 1, 3, 1];
+    var controlsum = 0;
+
+    for( var i=0; i < 11; i++ ) {
+        controlsum += weights[i] * p[i];
+    }
+
+    console.info(controlsum);
 
     if( controlsum % 10 === 0 ) {
         console.info("pesel poprawny");
